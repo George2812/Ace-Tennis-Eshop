@@ -1,0 +1,29 @@
+<%- include("partials/header") -%>
+
+<h3>Tennis Products </h3>
+
+<!- create a container for all the cards ->
+  <div class="container products">
+    <div class="row">
+      <!- Loop through each product's name and description ->
+        <%products.forEach(function(product){ %>
+        <div class="highlight-products col-lg-3 col-md-4 productCards  d-flex align-items-stretch">
+          <div class="card" style="width: 18rem;">
+            <!-iterate through images folder based on the product's number ->
+              <img src="<%="/images/" + product.number + ".jpg" %>" class="card-img-top" alt="...">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title"><%= product.name %></h5>
+                <!-Substring the description so to project only 100 characters plus the ... ->
+                  <p class="card-text"><a href="#" class="productDescription"><%= product.description.substring(0,100)+"..." %></a></p>
+                  <a href="#" class="mt-auto btn btn-primary">Add to cart</a>
+              </div>
+          </div>
+        </div>
+        <%}) %>
+
+    </div>
+  </div>
+
+
+
+  <%- include("partials/footer") -%>
