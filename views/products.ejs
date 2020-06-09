@@ -15,7 +15,9 @@
                 <h5 class="card-title"><%= product.name %></h5>
                 <!-Substring the description so to project only 100 characters plus the ... ->
                   <p class="card-text"><a href="#" class="productDescription"><%= product.description.substring(0,100)+"..." %></a></p>
-                  <a href="#" class="mt-auto btn btn-primary">Add to cart</a>
+                  <form class="" action="/products" method="post">
+                      <button class="mt-auto btn btn-primary" type="submit" name="button">Add to cart</button>
+                  </form>
               </div>
           </div>
         </div>
